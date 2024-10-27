@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Lesion Recognition</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/background.jpg'); /* Set background image */
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the background image */
+            font-family: Arial, sans-serif; /* Set a fallback font */
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            margin-top: 0;
+            text-align: center;
+            color: #000; /* Dark black color */
+            font-size: 48px; /* Larger font size */
+            font-weight: bold; /* Bold */
+        }
+
+        /* Style for file input */
+        input[type="file"] {
+            padding: 15px;
+            margin: 20px;
+            border: 3px solid #007bff; /* Blue border */
+            border-radius: 8px;
+            background-color: #f7f7f7; /* Light gray background */
+            color: #333; /* Dark gray text color */
+            font-size: 18px; /* Font size */
+            outline: none; /* Remove outline */
+            transition: border-color 0.3s ease; /* Smooth transition for border color */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Box shadow */
+        }
+
+        input[type="file"]:focus {
+            border-color: #0056b3; /* Darker blue border when focused */
+        }
+
+        /* Style for submit button */
+        button[type="submit"] {
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px; /* Font size */
+            transition: background-color 0.3s ease; /* Smooth transition for background color */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Box shadow */
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue background on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Skin Lesion Recognition</h1>
+    <div class="container">
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
